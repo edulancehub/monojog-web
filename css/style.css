@@ -241,6 +241,7 @@ input {
 .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     padding: 12px 28px;
     border-radius: var(--radius-full);
@@ -250,6 +251,7 @@ input {
     white-space: nowrap;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .btn::before {
@@ -576,6 +578,7 @@ input {
 
 .hero-content {
     max-width: 580px;
+    width: 100%;
 }
 
 .hero-badge {
@@ -590,6 +593,8 @@ input {
     font-size: 0.82rem;
     font-weight: 600;
     margin-bottom: 28px;
+    position: relative;
+    text-align: center;
 }
 
 .badge-dot {
@@ -2062,6 +2067,9 @@ input {
 
     .hero-content {
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-description {
@@ -2113,6 +2121,35 @@ input {
     .extension-content,
     .app-content {
         order: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .extension-content .section-desc,
+    .app-content .section-desc {
+        max-width: 540px;
+    }
+
+    .extension-features {
+        align-items: flex-start;
+        max-width: 400px;
+    }
+
+    .app-features-list {
+        text-align: left;
+        max-width: 480px;
+    }
+
+    .app-notify-form {
+        width: 100%;
+        max-width: 480px;
+        text-align: left;
+    }
+
+    .store-badges {
+        justify-content: center;
     }
 
     .extension-visual,
@@ -2136,6 +2173,10 @@ input {
     .step-connector {
         display: none;
     }
+
+    .trust-logos {
+        gap: 32px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2151,6 +2192,7 @@ input {
         display: flex;
     }
 
+    /* Hero */
     .hero {
         padding: 100px 0 60px;
         min-height: auto;
@@ -2160,9 +2202,19 @@ input {
         font-size: clamp(2rem, 8vw, 2.8rem);
     }
 
+    .hero-badge {
+        font-size: 0.72rem;
+        padding: 6px 14px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
     .hero-cta {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .hero-cta .btn {
@@ -2173,6 +2225,8 @@ input {
 
     .hero-stats {
         gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .stat-number {
@@ -2183,6 +2237,48 @@ input {
         display: none;
     }
 
+    /* Browser mockup scaling */
+    .mockup-browser {
+        max-width: 100%;
+    }
+
+    .browser-url {
+        max-width: 180px;
+    }
+
+    .dash-stats-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .dash-stat-card {
+        padding: 8px;
+        gap: 6px;
+    }
+
+    .dash-stat-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .dash-stat-val {
+        font-size: 0.82rem;
+    }
+
+    .dash-stat-lbl {
+        font-size: 0.58rem;
+    }
+
+    .timer-ring {
+        width: 56px;
+        height: 56px;
+    }
+
+    .timer-text {
+        font-size: 0.72rem;
+    }
+
+    /* Features */
     .features-grid {
         grid-template-columns: 1fr;
     }
@@ -2191,21 +2287,97 @@ input {
         grid-column: span 1;
     }
 
+    .feature-card {
+        padding: 24px;
+    }
+
+    /* Trust */
+    .trust-logos {
+        gap: 20px;
+    }
+
+    .trust-logo svg {
+        width: 90px;
+    }
+
+    /* How It Works */
+    .step-card {
+        padding: 24px 16px;
+    }
+
+    .step-number {
+        font-size: 3rem;
+    }
+
+    .step-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    /* Extension */
+    .ext-popup {
+        width: 290px;
+    }
+
+    .ext-popup-header {
+        padding: 12px 16px;
+    }
+
+    .ext-popup-stats {
+        padding: 0 16px 12px;
+    }
+
+    .ext-popup-sites {
+        padding: 10px 16px 16px;
+    }
+
+    /* App section */
+    .app-content .section-title {
+        text-align: center;
+    }
+
+    .coming-soon-badge {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+
+    .app-notify-form {
+        max-width: 100%;
+    }
+
+    .notify-form .form-group {
+        flex-direction: column;
+    }
+
+    .notify-form input {
+        width: 100%;
+    }
+
+    .notify-form .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .store-badges {
+        justify-content: center;
+    }
+
+    .store-badge {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    /* Testimonials */
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
 
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
+    .testimonial-card {
+        padding: 22px;
     }
 
-    .footer-bottom {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-    }
-
+    /* CTA */
     .cta-buttons {
         flex-direction: column;
         align-items: center;
@@ -2217,16 +2389,65 @@ input {
         justify-content: center;
     }
 
-    .notify-form .form-group {
-        flex-direction: column;
+    .cta-title {
+        font-size: clamp(1.6rem, 6vw, 2.4rem);
     }
 
-    .notify-form .btn {
+    .cta-desc {
+        font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 48px 0 32px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-brand .nav-logo {
         justify-content: center;
     }
 
+    .footer-desc {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-col a:hover {
+        transform: none;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    /* Section spacing */
     .section-header {
         margin-bottom: 48px;
+    }
+
+    .section-desc {
+        font-size: 0.95rem;
     }
 
     .features-section,
@@ -2241,6 +2462,18 @@ input {
     .hero-scroll-indicator {
         display: none;
     }
+
+    /* Mobile menu */
+    .mobile-link {
+        font-size: 1.25rem;
+        padding: 14px 24px;
+    }
+
+    .mobile-cta {
+        width: 80%;
+        margin: 24px auto 0;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2248,24 +2481,40 @@ input {
         padding: 0 16px;
     }
 
+    /* Hero */
+    .hero {
+        padding: 88px 0 48px;
+    }
+
     .hero-title {
-        font-size: clamp(1.8rem, 7vw, 2.4rem);
+        font-size: clamp(1.7rem, 7vw, 2.2rem);
     }
 
-    .section-title {
-        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    .hero-badge {
+        font-size: 0.68rem;
+        padding: 5px 12px;
+        gap: 6px;
+        margin-bottom: 20px;
     }
 
-    .phone-frame {
-        width: 240px;
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 28px;
     }
 
-    .ext-popup {
-        width: 280px;
+    .hero-cta {
+        margin-bottom: 32px;
+    }
+
+    .hero-cta .btn {
+        max-width: 100%;
+        padding: 14px 24px;
+        font-size: 0.88rem;
     }
 
     .hero-stats {
         flex-wrap: wrap;
+        gap: 12px;
     }
 
     .stat-divider {
@@ -2275,5 +2524,423 @@ input {
     .stat-item {
         flex: 1;
         min-width: 80px;
+    }
+
+    .stat-number {
+        font-size: 1.1rem;
+    }
+
+    .stat-suffix {
+        font-size: 1rem;
+    }
+
+    .stat-label {
+        font-size: 0.68rem;
+    }
+
+    /* Section typography */
+    .section-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .section-tag {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+
+    .section-desc {
+        font-size: 0.88rem;
+    }
+
+    /* Browser mockup */
+    .browser-bar {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    .browser-dots span {
+        width: 8px;
+        height: 8px;
+    }
+
+    .browser-url {
+        max-width: 140px;
+        font-size: 0.68rem;
+        padding: 4px 10px;
+    }
+
+    .browser-content {
+        padding: 12px;
+    }
+
+    .dash-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .dash-greeting {
+        text-align: center;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .dash-stats-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .dash-stat-card {
+        padding: 8px 10px;
+        justify-content: center;
+    }
+
+    .chart-bars {
+        height: 50px;
+        gap: 6px;
+    }
+
+    /* Phone mockup */
+    .phone-frame {
+        width: 230px;
+    }
+
+    .phone-notch {
+        width: 90px;
+        height: 22px;
+    }
+
+    .phone-hello {
+        font-size: 0.95rem;
+    }
+
+    .phone-avatar-sm {
+        width: 30px;
+        height: 30px;
+    }
+
+    .phone-focus-card {
+        padding: 12px;
+    }
+
+    .phone-timer-large svg {
+        width: 110px;
+        height: 110px;
+    }
+
+    .phone-time {
+        font-size: 1.15rem;
+    }
+
+    .phone-start-btn {
+        font-size: 0.72rem;
+        padding: 8px;
+    }
+
+    .phone-quick-stats {
+        gap: 4px;
+    }
+
+    .phone-qstat {
+        padding: 6px;
+    }
+
+    .phone-qstat-val {
+        font-size: 0.85rem;
+    }
+
+    .phone-status-bar {
+        padding: 10px 16px 6px;
+        font-size: 0.65rem;
+    }
+
+    .phone-app-content {
+        padding: 6px 10px 0;
+    }
+
+    /* Extension popup */
+    .ext-popup {
+        width: 260px;
+    }
+
+    .ext-popup-header {
+        padding: 10px 14px;
+    }
+
+    .ext-popup-logo {
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+
+    .ext-popup-logo svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .ext-popup-toggle {
+        font-size: 0.7rem;
+        gap: 6px;
+    }
+
+    .toggle-switch {
+        width: 34px;
+        height: 18px;
+    }
+
+    .toggle-knob {
+        width: 14px;
+        height: 14px;
+    }
+
+    .toggle-switch.active .toggle-knob {
+        left: 18px;
+    }
+
+    .ext-popup-timer {
+        padding: 16px;
+    }
+
+    .ext-timer-circle {
+        width: 110px;
+        height: 110px;
+    }
+
+    .ext-timer-time {
+        font-size: 1.2rem;
+    }
+
+    .ext-popup-stats {
+        padding: 0 12px 10px;
+        gap: 6px;
+    }
+
+    .ext-mini-stat {
+        padding: 8px 4px;
+    }
+
+    .ext-mini-val {
+        font-size: 0.88rem;
+    }
+
+    .ext-mini-lbl {
+        font-size: 0.6rem;
+    }
+
+    .ext-popup-sites {
+        padding: 8px 12px 14px;
+    }
+
+    .ext-site-item {
+        font-size: 0.75rem;
+    }
+
+    /* Features */
+    .feature-card {
+        padding: 20px;
+    }
+
+    .feature-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .feature-title {
+        font-size: 1.05rem;
+    }
+
+    .feature-desc {
+        font-size: 0.85rem;
+    }
+
+    .shield-item {
+        font-size: 0.75rem;
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    .shield-status {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
+
+    /* Extension features checklist */
+    .ext-feature {
+        font-size: 0.85rem;
+        gap: 10px;
+    }
+
+    .ext-check {
+        width: 24px;
+        height: 24px;
+    }
+
+    .ext-check svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .ext-note {
+        font-size: 0.75rem;
+    }
+
+    /* How it works */
+    .step-card {
+        padding: 20px 12px;
+    }
+
+    .step-number {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+
+    .step-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 14px;
+    }
+
+    .step-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .step-title {
+        font-size: 1rem;
+    }
+
+    .step-desc {
+        font-size: 0.82rem;
+    }
+
+    /* App section */
+    .app-feat-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .app-feat-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .app-feat strong {
+        font-size: 0.88rem;
+    }
+
+    .app-feat p {
+        font-size: 0.8rem;
+    }
+
+    .app-notify-form h4 {
+        font-size: 0.9rem;
+    }
+
+    .notify-form input {
+        padding: 12px 16px;
+        font-size: 0.85rem;
+    }
+
+    .coming-soon-badge {
+        font-size: 0.7rem;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: 18px;
+    }
+
+    .testimonial-text {
+        font-size: 0.82rem;
+    }
+
+    .author-avatar {
+        width: 34px;
+        height: 34px;
+        font-size: 0.68rem;
+    }
+
+    .author-name {
+        font-size: 0.82rem;
+    }
+
+    .author-role {
+        font-size: 0.68rem;
+    }
+
+    /* CTA */
+    .cta-title {
+        font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .cta-desc {
+        font-size: 0.88rem;
+    }
+
+    .cta-buttons .btn {
+        max-width: 100%;
+        font-size: 0.88rem;
+    }
+
+    /* Footer */
+    .footer-col h4 {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+    }
+
+    .footer-col a {
+        font-size: 0.82rem;
+        padding: 5px 0;
+    }
+
+    .footer-desc {
+        font-size: 0.82rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.75rem;
+    }
+
+    /* Section spacing */
+    .features-section,
+    .extension-section,
+    .how-section,
+    .app-section,
+    .testimonials-section,
+    .cta-section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 36px;
+    }
+
+    /* Trust */
+    .trust-section {
+        padding: 32px 0;
+    }
+
+    .trust-logos {
+        gap: 16px;
+    }
+
+    .trust-logo svg {
+        width: 70px;
+        height: auto;
+    }
+
+    .trust-label {
+        font-size: 0.72rem;
+        margin-bottom: 18px;
+    }
+
+    /* Buttons general */
+    .btn-lg {
+        padding: 14px 28px;
+        font-size: 0.9rem;
+    }
+
+    .btn-sm {
+        padding: 7px 16px;
+        font-size: 0.8rem;
     }
 }
