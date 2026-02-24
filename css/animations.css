@@ -1,0 +1,278 @@
+/* ============================================
+   MONOJOG — Animations
+   ============================================ */
+
+/* --- Reveal Animations --- */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: 0.15s !important;
+}
+
+.delay-2 {
+    transition-delay: 0.3s !important;
+}
+
+.delay-3 {
+    transition-delay: 0.45s !important;
+}
+
+.delay-4 {
+    transition-delay: 0.6s !important;
+}
+
+/* --- Timer Pulse --- */
+@keyframes timerPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.timer-ring {
+    animation: timerPulse 4s ease-in-out infinite;
+}
+
+/* --- Gradient Shift --- */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.btn-primary {
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+}
+
+/* --- Glow Pulse --- */
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(108, 60, 225, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 4px 30px rgba(108, 60, 225, 0.5);
+    }
+}
+
+/* --- Feature Hover Shine --- */
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(108, 60, 225, 0.03) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.feature-card:hover::after {
+    opacity: 1;
+}
+
+/* --- Phone Screen Shimmer --- */
+@keyframes phoneShimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.phone-focus-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, transparent 20%, rgba(255, 255, 255, 0.02) 50%, transparent 80%);
+    background-size: 400% 100%;
+    animation: phoneShimmer 8s linear infinite;
+    pointer-events: none;
+}
+
+/* --- Testimonial Entrance --- */
+.testimonial-card {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- Badge Pulse Ring --- */
+.hero-badge::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.4);
+    animation: badgePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes badgePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 8px rgba(0, 212, 170, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 170, 0);
+    }
+}
+
+/* --- Number Count Animation --- */
+.stat-number {
+    font-variant-numeric: tabular-nums;
+}
+
+/* --- Smooth Magnetic Hover for Cards --- */
+.feature-card,
+.testimonial-card,
+.step-card {
+    will-change: transform;
+}
+
+/* --- Chart Bar Animation --- */
+.chart-bar {
+    transform-origin: bottom;
+    animation: barGrow 1.5s ease-out forwards;
+    animation-play-state: paused;
+}
+
+.chart-bar.animated {
+    animation-play-state: running;
+}
+
+@keyframes barGrow {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* --- Notification Slide In --- */
+@keyframes notifSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+
+/* --- Smooth Section Transitions --- */
+section {
+    position: relative;
+}
+
+/* --- Subtle Background Noise --- */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.015;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* --- Loading Skeleton Animation --- */
+@keyframes skeleton {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* --- Micro-interaction: Button Press --- */
+.btn:active {
+    transform: scale(0.97) !important;
+    transition: transform 0.1s ease;
+}
+
+/* --- Focus Ring for Accessibility --- */
+.btn:focus-visible,
+.nav-link:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 3px;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal-up {
+        opacity: 1;
+        transform: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
