@@ -34,4 +34,6 @@ gh repo create edulancehub/monojog-web --public --source=. --remote=origin --pus
 Contact the repo owner to confirm access or provide a deploy token if needed.
 
 ---
+Website for monojog
+
 Generated locally by a development assistant.
