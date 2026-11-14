@@ -1,24 +1,22 @@
-/* Research interest form. Configure data-endpoint with the project's Formspree form URL. */
+/* Research interest form. Sends to a same-origin Vercel Function so the Formspree endpoint stays in server-side environment configuration. */
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('researchInterestForm');
   const status = document.getElementById('researchFormStatus');
   if (!form || !status) return;
 
+  const setupNote = form.querySelector('.form-setup-note');
+  if (setupNote) {
+    setupNote.textContent = 'Your submission is sent securely through Monojog’s Vercel endpoint. Contact details are used only to respond to your research interest.';
+  }
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     status.classList.remove('is-error', 'is-success');
-
     if (!form.reportValidity()) return;
 
-    const honeypot = form.querySelector('[name="_gotcha"]');
-    if (honeypot && honeypot.value) return;
-
-    const endpoint = form.dataset.endpoint;
-    if (!endpoint || endpoint.includes('YOUR_FORM_ID')) {
-      status.textContent = 'This interest form is not connected yet. The site owner needs to create a Formspree form and add its endpoint before applications can be received.';
-      status.classList.add('is-error');
-      return;
-    }
+    const values = Object.fromEntries(new FormData(form).entries());
+    if (values._gotcha) return;
+    delete values._gotcha;
 
     const submitButton = form.querySelector('[type="submit"]');
     const originalLabel = submitButton.innerHTML;
@@ -27,17 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
     status.textContent = 'Sending your research interest…';
 
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch('/api/research-interest', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(values)
       });
-      if (!response.ok) throw new Error('The form service could not accept this submission.');
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || 'The form service could not accept this submission.');
+
       form.reset();
       status.textContent = 'Thank you for sharing your interest. This is not study enrollment; Monojog may contact you if a relevant opportunity becomes available.';
       status.classList.add('is-success');
     } catch (error) {
-      status.textContent = 'We could not send your message just now. Please try again later.';
+      status.textContent = error.message || 'We could not send your message just now. Please try again later.';
       status.classList.add('is-error');
     } finally {
       submitButton.disabled = false;
