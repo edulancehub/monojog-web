@@ -4,24 +4,106 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101513">
-  <meta name="description" content="Learn about Monojog's approach to brain-health technology: human agency, privacy, scientific evidence, and honest limits.">
-  <title>Research &amp; care — Monojog</title>
+  <meta name="description" content="Explore Monojog's brain activity research and express interest in contributing as a researcher, designer, or participant advisor.">
+  <title>Research with Monojog — Brain activity, focus &amp; care</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/brain-health.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/brain-health.css">
+  <link rel="stylesheet" href="css/research.css">
 </head>
 <body>
-  <div id="preloader" aria-hidden="true"><div class="preloader-inner"><div class="preloader-logo">M</div><div class="preloader-bar"><div class="preloader-bar-fill"></div></div></div></div><div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-  <nav class="navbar" id="navbar" aria-label="Main navigation"><div class="container nav-container"><a class="nav-logo" href="index.html" aria-label="Monojog home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="logo-text">monojog<span class="brand-period">.</span></span></a><div class="nav-links" id="navLinks"><a class="nav-link" href="index.html">Our idea</a><a class="nav-link" href="shield.html">The hardware</a><a class="nav-link active" href="research.html" aria-current="page">Research &amp; care</a></div><div class="nav-actions"><a class="btn btn-primary btn-sm" href="shield.html">Explore the hardware <span aria-hidden="true">↗</span></a><button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button></div></div></nav>
-  <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-content"><a class="mobile-link" href="index.html">Our idea</a><a class="mobile-link" href="shield.html">The hardware</a><a class="mobile-link" href="research.html" aria-current="page">Research &amp; care</a><a class="btn btn-primary btn-lg mobile-cta" href="shield.html">Explore the hardware ↗</a></div></div>
+  <div id="preloader" aria-hidden="true"><div class="preloader-inner"><div class="preloader-logo">M</div><div class="preloader-bar"><div class="preloader-bar-fill"></div></div></div></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a class="nav-logo" href="index.html" aria-label="Monojog home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="logo-text">monojog<span class="brand-period">.</span></span></a>
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link" href="index.html">Our idea</a>
+        <a class="nav-link" href="shield.html">The hardware</a>
+        <a class="nav-link active" href="research.html" aria-current="page">Research</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="#apply">Get involved <span aria-hidden="true">↘</span></a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-content">
+    <a class="mobile-link" href="index.html">Our idea</a>
+    <a class="mobile-link" href="shield.html">The hardware</a>
+    <a class="mobile-link" href="research.html" aria-current="page">Research</a>
+    <a class="btn btn-primary btn-lg mobile-cta" href="#apply">Get involved ↘</a>
+  </div></div>
+
   <main>
-    <section class="page-hero research-page-hero" id="home"><div class="hero-bg" aria-hidden="true"><div class="hero-orb hero-orb-one"></div><div class="hero-orb hero-orb-two"></div><div class="hero-grid"></div></div><div class="container page-hero-layout research-hero-layout"><div class="page-hero-copy"><span class="eyebrow reveal-up"><span class="eyebrow-dot"></span> RESEARCH &amp; CARE</span><h1 class="page-title reveal-up delay-1">Curiosity,<br><span class="serif-accent">with boundaries.</span></h1><p class="hero-description reveal-up delay-2">Brain-sensing technology deserves more than exciting demos. It needs careful evidence, clear limits, meaningful privacy, and people in control.</p><div class="hero-actions reveal-up delay-3"><a class="btn btn-primary btn-lg" href="shield.html">See the hardware concept <span aria-hidden="true">↗</span></a><a class="text-link" href="index.html">Back to our idea <span aria-hidden="true">→</span></a></div></div><div class="research-card reveal-up delay-2"><div class="research-card-header"><span>OUR RESEARCH COMPASS</span><span class="compass-star">✳</span></div><div class="compass-graphic"><div class="compass-circle compass-circle-outer"></div><div class="compass-circle compass-circle-inner"></div><div class="compass-cross horizontal"></div><div class="compass-cross vertical"></div><div class="compass-core">M</div><span class="compass-label north">HUMAN</span><span class="compass-label east">OPEN</span><span class="compass-label south">CAREFUL</span><span class="compass-label west">USEFUL</span></div><div class="research-card-footer"><span>Direction before certainty.</span><span>BUILT WITH CARE</span></div></div></div></section>
-    <section class="principles-section section-space"><div class="container principles-layout"><div class="principles-intro reveal-up"><span class="section-index">01 — WHAT GUIDES US</span><h2>Technology should<br><span class="serif-accent">know its place.</span></h2><p>Our north star is not more monitoring. It’s better understanding, shaped with the people it’s meant to serve.</p></div><div class="principles-list"><article class="principle reveal-up"><span class="principle-number">01</span><div><h3>People stay in control</h3><p>Signals and prompts should be understandable, optional, and easy to dismiss. A tool should support your choices, never make them for you.</p></div><span class="principle-symbol">↗</span></article><article class="principle reveal-up delay-1"><span class="principle-number">02</span><div><h3>Privacy is part of care</h3><p>Brain data is personal. We aim to minimize collection, explain how information is used, and make privacy decisions visible.</p></div><span class="principle-symbol">↗</span></article><article class="principle reveal-up delay-2"><span class="principle-number">03</span><div><h3>Evidence before claims</h3><p>Brain activity is complex. We won’t present a signal as a diagnosis, a measure of a person’s worth, or a complete picture of brain health.</p></div><span class="principle-symbol">↗</span></article><article class="principle reveal-up delay-3"><span class="principle-number">04</span><div><h3>Research should be shared</h3><p>We want to make our questions, design choices, and learnings open to discussion so the work can improve through collaboration.</p></div><span class="principle-symbol">↗</span></article></div></div></section>
-    <section class="research-note-section section-space"><div class="container research-note-layout"><div class="research-copy reveal-up"><span class="section-index">02 — HONEST ABOUT THE LIMITS</span><h2>A signal is not<br><span class="serif-accent">the whole story.</span></h2><p>Brain-sensing tools may one day support personal reflection, but a signal can be affected by context and many other factors. It cannot, on its own, define someone’s brain fitness or diagnose a health condition.</p><p>Monojog Shield is an early research concept. We’re exploring questions, not offering a clinically validated product or medical advice.</p><a class="btn btn-light btn-lg" href="shield.html">Explore the concept <span aria-hidden="true">↗</span></a></div><div class="care-card reveal-up delay-1"><span class="care-card-kicker">A GOOD PLACE TO START</span><div class="care-pulse" aria-hidden="true"><span></span><span></span><span></span></div><h3>Ask, don’t assume.</h3><p>Useful technology makes its uncertainty clear—and leaves interpretation with the person.</p><span class="care-card-foot">HUMAN CONTEXT COMES FIRST</span></div></div></section>
-    <section class="closing-section section-space"><div class="container closing-inner reveal-up"><span class="section-index">THE WORK IS OPEN-ENDED</span><h2>Better questions<br><span class="serif-accent">make better tools.</span></h2><p>We’re exploring brain-sensing hardware with care and humility. Start with the concept or return to the bigger idea.</p><div class="closing-actions"><a class="btn btn-primary btn-lg" href="shield.html">See Monojog Shield <span aria-hidden="true">↗</span></a><a class="text-link" href="index.html">Back to Monojog <span aria-hidden="true">→</span></a></div></div></section>
+    <section class="research-hero" id="home">
+      <div class="hero-bg" aria-hidden="true"><div class="hero-orb hero-orb-one"></div><div class="hero-orb hero-orb-two"></div><div class="hero-grid"></div></div>
+      <div class="container research-hero-content">
+        <div class="research-hero-copy">
+          <span class="eyebrow reveal-up"><span class="eyebrow-dot"></span> MONOJOG / OPEN RESEARCH</span>
+          <h1 class="research-title reveal-up delay-1">Brain signals are<br><span class="serif-accent">only the beginning.</span></h1>
+          <p class="research-lede reveal-up delay-2">We’re exploring whether wearable brain-activity sensing can help people reflect on focus and everyday experience—without turning a complex human life into a score.</p>
+          <div class="research-hero-actions reveal-up delay-3"><a class="btn btn-primary btn-lg" href="#apply">Share your interest <span aria-hidden="true">↘</span></a><a class="research-secondary-link" href="#questions">What we’re exploring <span aria-hidden="true">↓</span></a></div>
+          <p class="research-status reveal-up delay-4"><span aria-hidden="true">✳</span> Early-stage research direction · No study recruitment is currently confirmed</p>
+        </div>
+        <aside class="research-hero-note reveal-up delay-2" aria-label="Research principles">
+          <span class="research-note-label">OUR STARTING POINT</span>
+          <p>Measure carefully.<br>Interpret humbly.<br><em>Keep people in control.</em></p>
+          <div class="research-note-rule"></div>
+          <span class="research-note-foot">A CONCEPT, NOT A CLINICAL TOOL</span>
+        </aside>
+      </div>
+      <a class="research-scroll" href="#questions"><span class="scroll-cue-line"></span> Explore our research</a>
+    </section>
+
+    <section class="research-purpose" id="questions">
+      <div class="container">
+        <div class="research-section-heading reveal-up"><span class="section-index">01 — WHAT WE’RE TRYING TO LEARN</span><h2>Better questions,<br><span class="serif-accent">before bigger claims.</span></h2><p>Monojog Shield is a hardware research concept. We’re working out what’s technically possible, what could be genuinely useful, and what should remain out of bounds.</p></div>
+        <div class="question-grid">
+          <article class="question-card reveal-up"><span class="question-index">01 / SIGNAL</span><div class="question-icon signal-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><h3>What can we sense?</h3><p>Explore whether brain-activity patterns can be captured consistently and comfortably in everyday settings—not just in ideal conditions.</p></article>
+          <article class="question-card reveal-up delay-1"><span class="question-index">02 / CONTEXT</span><div class="question-icon context-icon" aria-hidden="true"><span>+</span><span>◌</span><span>↗</span></div><h3>What does a signal mean?</h3><p>Understand how personal reflection, environment, rest, and task context matter when someone makes sense of a measurement.</p></article>
+          <article class="question-card reveal-up delay-2"><span class="question-index">03 / CARE</span><div class="question-icon care-icon" aria-hidden="true"><span>✳</span></div><h3>How should insight feel?</h3><p>Find out whether feedback can encourage curiosity and agency without creating pressure, surveillance, or false certainty.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-boundaries">
+      <div class="container boundaries-layout">
+        <div class="boundaries-copy reveal-up"><span class="section-index">02 — WHAT THIS IS / ISN’T</span><h2>Research first.<br><span class="serif-accent">No magic brain score.</span></h2><p>Brain activity is complex and changes with many factors. A wearable signal alone cannot tell the whole story of someone’s attention, wellbeing, or brain health.</p><p>We are not offering a validated brain-fitness assessment, diagnosis, treatment, or medical device. We will be clear about uncertainty and limitations as the work develops.</p><a class="boundaries-link" href="shield.html">See the Monojog Shield concept <span aria-hidden="true">↗</span></a></div>
+        <div class="boundaries-list reveal-up delay-1"><div><span class="boundary-mark">✓</span><p><strong>We are exploring</strong><br>Early research questions about wearable sensing, focus, and human-centered feedback.</p></div><div><span class="boundary-mark">✓</span><p><strong>We value</strong><br>Informed choice, privacy by design, evidence, and lived experience.</p></div><div><span class="boundary-mark boundary-no">—</span><p><strong>We do not claim</strong><br>To measure your overall brain fitness or provide clinical guidance.</p></div></div>
+      </div>
+    </section>
+
+    <section class="participation-section">
+      <div class="container participation-layout">
+        <div class="participation-intro reveal-up"><span class="section-index">03 — CONTRIBUTE TO THE CONVERSATION</span><h2>Different perspectives<br><span class="serif-accent">make better research.</span></h2><p>We welcome expressions of interest from people who want to help shape responsible brain-sensing technology. At this stage, this form helps us understand who is interested and what expertise or perspectives they would bring.</p><div class="participation-roles"><span>Researchers &amp; clinicians</span><span>Neurotechnology &amp; hardware</span><span>Design &amp; accessibility</span><span>Lived experience &amp; community</span></div><div class="participation-expectations"><span class="expectation-dot"></span><p><strong>What happens next?</strong><br>We’ll review your note and may contact you if a suitable conversation or research opportunity becomes available. Sending this form does not enroll you in a study.</p></div></div>
+        <div class="application-card reveal-up delay-1" id="apply">
+          <div class="form-heading"><span class="form-kicker">RESEARCH INTEREST</span><h3>Tell us a little about you.</h3><p>Share only what you’re comfortable sharing. Please don’t include medical records or sensitive health details.</p></div>
+          <form id="researchInterestForm" class="research-form" data-endpoint="https://formspree.io/f/YOUR_FORM_ID" novalidate>
+            <div class="form-row"><div class="form-field"><label for="researchName">Name <span aria-hidden="true">*</span></label><input id="researchName" name="name" type="text" autocomplete="name" required maxlength="100" placeholder="Your name"></div><div class="form-field"><label for="researchEmail">Email <span aria-hidden="true">*</span></label><input id="researchEmail" name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@example.com"></div></div>
+            <div class="form-row"><div class="form-field"><label for="researchRole">How would you like to contribute? <span aria-hidden="true">*</span></label><select id="researchRole" name="contribution_area" required><option value="" disabled selected>Select an area</option><option>Research or neuroscience</option><option>Clinical practice or mental health</option><option>Neurotechnology or hardware</option><option>Product, design, or accessibility</option><option>Community or lived experience</option><option>Something else</option></select></div><div class="form-field"><label for="researchBackground">Your background</label><input id="researchBackground" name="background" type="text" maxlength="160" placeholder="Role, field, or perspective"></div></div>
+            <div class="form-field"><label for="researchInterest">What would you be interested in? <span aria-hidden="true">*</span></label><select id="researchInterest" name="interest" required><option value="" disabled selected>Choose what interests you</option><option>Reviewing research questions</option><option>Sharing a professional perspective</option><option>Giving feedback on design or accessibility</option><option>Joining a future interview or workshop</option><option>Following project updates</option><option>Other</option></select></div>
+            <div class="form-field"><label for="researchMessage">Anything else you’d like us to know? <span class="optional-label">Optional</span></label><textarea id="researchMessage" name="message" rows="4" maxlength="1500" placeholder="A few sentences are plenty. Please avoid sensitive personal or medical details."></textarea></div>
+            <label class="consent-field"><input type="checkbox" name="contact_consent" value="yes" required><span>I agree that Monojog may use these details to respond to my research interest. I understand this is not study consent and I can ask for my details to be deleted.</span></label>
+            <div class="form-honeypot" aria-hidden="true"><label for="companyWebsite">Leave this field empty</label><input id="companyWebsite" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
+            <button class="btn btn-primary btn-lg form-submit" type="submit">Send research interest <span aria-hidden="true">↗</span></button>
+            <p class="form-status" id="researchFormStatus" role="status" aria-live="polite">Submitting this form is an expression of interest, not enrollment in a study.</p>
+            <p class="form-setup-note">Form submissions are sent through Formspree. The project owner must connect a free Formspree form endpoint before submissions can be received.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-next"><div class="container research-next-inner reveal-up"><div><span class="section-index">KEEP EXPLORING</span><h2>Curious about the hardware?</h2><p>See what Monojog Shield is—and the questions we’re still working through.</p></div><a class="btn btn-primary btn-lg" href="shield.html">Explore Monojog Shield <span aria-hidden="true">↗</span></a></div></section>
   </main>
-  <footer class="site-footer"><div class="container footer-main"><a class="nav-logo footer-logo" href="index.html"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="logo-text">monojog<span class="brand-period">.</span></span></a><p>Thoughtful hardware for understanding brain activity.</p><a class="footer-top" href="#home">BACK TO TOP ↑</a></div><div class="container footer-bottom"><span>© <span id="currentYear">2026</span> Monojog. An early research concept, built with care.</span><span>Not medical advice · Not a diagnostic tool</span></div></footer>
-  <script src="js/main.js"></script><script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+  <footer class="site-footer"><div class="container footer-main"><a class="nav-logo footer-logo" href="index.html"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="logo-text">monojog<span class="brand-period">.</span></span></a><p>Thoughtful hardware for understanding brain activity.</p><a class="footer-top" href="#home">BACK TO TOP ↑</a></div><div class="container footer-bottom"><span>© <span id="currentYear">2026</span> Monojog. An early research concept, built with care.</span><span>Not a medical device · Not a diagnostic tool</span></div></footer>
+  <script src="js/main.js"></script>
+  <script src="js/research-form.js"></script>
+  <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
 </body>
 </html>
