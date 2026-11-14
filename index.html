@@ -1,1139 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monojog — Focus. Flow. Achieve.</title>
-    <meta name="description"
-        content="Monojog helps you stay focused and productive. Download our Chrome extension now or get notified when our mobile app launches on Google Play Store.">
-    <meta name="keywords"
-        content="Monojog, focus app, productivity, Chrome extension, concentration, distraction blocker, mobile app">
-    <meta name="author" content="Monojog">
-    <meta name="theme-color" content="#6C3CE1">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Monojog — Focus. Flow. Achieve.">
-    <meta property="og:description"
-        content="Your ultimate focus companion. Chrome Extension available now. Mobile app coming soon.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://monojog.app">
-    <meta property="og:image" content="assets/og-image.png">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Monojog — Focus. Flow. Achieve.">
-    <meta name="twitter:description"
-        content="Your ultimate focus companion. Chrome Extension available now. Mobile app coming soon.">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101513">
+  <meta name="description" content="Monojog is exploring thoughtful hardware, software, and open research for attention, human focus, and safer decisions.">
+  <meta property="og:title" content="Monojog — Attention, by design">
+  <meta property="og:description" content="A new direction for Monojog: focus hardware, a companion app, and open research for human-centered attention support.">
+  <meta property="og:type" content="website">
+  <title>Monojog — Attention, by design</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
 </head>
-
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="preloader-inner">
-            <div class="preloader-logo">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <circle cx="24" cy="24" r="22" stroke="url(#preloaderGrad)" stroke-width="3" fill="none"
-                        class="preloader-circle" />
-                    <path d="M16 24C16 19.5817 19.5817 16 24 16C28.4183 16 32 19.5817 32 24C32 28.4183 28.4183 32 24 32"
-                        stroke="url(#preloaderGrad)" stroke-width="3" stroke-linecap="round" />
-                    <circle cx="24" cy="24" r="4" fill="url(#preloaderGrad)" />
-                    <defs>
-                        <linearGradient id="preloaderGrad" x1="0" y1="0" x2="48" y2="48">
-                            <stop stop-color="#6C3CE1" />
-                            <stop offset="1" stop-color="#00D4AA" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-            </div>
-            <div class="preloader-bar">
-                <div class="preloader-bar-fill"></div>
-            </div>
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-logo">M</div>
+      <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a class="nav-logo" href="#home" aria-label="Monojog home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="logo-text">monojog<span class="brand-period">.</span></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link" href="#approach">Approach</a>
+        <a class="nav-link" href="#system">The system</a>
+        <a class="nav-link" href="#research">Open research</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="#research">Explore the vision <span aria-hidden="true">↗</span></a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+      <a class="mobile-link" href="#approach">Approach</a>
+      <a class="mobile-link" href="#system">The system</a>
+      <a class="mobile-link" href="#research">Open research</a>
+      <a class="btn btn-primary btn-lg mobile-cta" href="#research">Explore the vision ↗</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-orb hero-orb-one"></div>
+        <div class="hero-orb hero-orb-two"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <div class="eyebrow reveal-up"><span class="eyebrow-dot"></span> A new direction for Monojog</div>
+          <h1 class="hero-title reveal-up delay-1">Attention,<br><span class="serif-accent">by design.</span></h1>
+          <p class="hero-description reveal-up delay-2">We’re reimagining Monojog as a human-centered focus company—bringing thoughtful hardware, a companion app, and open research together to help people understand and care for their attention.</p>
+
+          <div class="hero-actions reveal-up delay-3">
+            <a class="btn btn-primary btn-lg" href="#system">Meet Monojog Shield <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="#research">Our research principles <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="hero-note reveal-up delay-4"><span class="note-icon" aria-hidden="true">✳</span><span>Early concept · Built around human agency, privacy, and care</span></div>
         </div>
+
+        <div class="hero-art reveal-up delay-2" aria-label="Concept illustration of a Monojog focus device and companion app">
+          <div class="art-caption"><span>MONOJOG / 01</span><span>CONCEPT STUDY</span></div>
+
+          <div class="device-stage">
+            <div class="orbit orbit-a"></div>
+            <div class="orbit orbit-b"></div>
+            <div class="device-shadow"></div>
+
+            <div class="device">
+              <div class="device-top"><span class="device-brand">m.</span><span class="device-led"></span></div>
+              <div class="device-face">
+                <div class="device-ring">
+                  <div class="device-core"><span class="core-spark">✳</span></div>
+                </div>
+              </div>
+              <div class="device-bottom"><span>MONOJOG SHIELD</span><span>01 — CONCEPT</span></div>
+            </div>
+
+            <div class="signal signal-one"><span class="signal-dot"></span><span>Pause. Notice. Reset.</span></div>
+            <div class="signal signal-two"><span class="signal-line"></span><span>Designed around you</span></div>
+
+            <div class="app-tile">
+              <div class="app-tile-top"><span>YOUR MOMENT</span><span class="app-live-dot"></span></div>
+              <div class="app-wave">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="app-tile-bottom">
+                <strong>Check in with yourself</strong>
+                <span>Take a breath when you need one.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="art-foot"><span>01 / 03</span><span>HUMAN-CENTERED TECHNOLOGY</span><span>↗</span></div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#approach"><span class="scroll-cue-line"></span> Scroll to explore</a>
+    </section>
+
+    <section class="manifesto section-space" id="approach">
+      <div class="container manifesto-grid">
+        <div class="manifesto-label reveal-up">
+          <span class="section-index">01 — WHY WE’RE HERE</span>
+          <span class="vertical-rule"></span>
+          <span class="tiny-label">A different kind of focus company</span>
+        </div>
+
+        <div class="manifesto-copy reveal-up delay-1">
+          <h2>Focus isn’t a score to chase.<br><span class="serif-accent">It’s part of being human.</span></h2>
+          <p>Our attention shifts with our surroundings, energy, and needs. Instead of asking people to push harder, we want to create tools that help them notice what’s happening and choose what helps.</p>
+          <p>That means designing with care, being honest about what technology can and can’t tell us, and making room for the people who will use—and study—these tools.</p>
+          <a class="text-link" href="#principles">The principles behind the work <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="manifesto-aside reveal-up delay-2">
+          <span class="quote-mark">“</span>
+          <p>Better focus tools should give people more agency—not less.</p>
+          <span class="aside-caption">THE MONOJOG POINT OF VIEW</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="system-section section-space" id="system">
+      <div class="container">
+        <div class="section-heading reveal-up">
+          <div>
+            <span class="section-index">02 — THE MONOJOG SYSTEM</span>
+            <h2>One thoughtful system.<br><span class="serif-accent">Three connected parts.</span></h2>
+          </div>
+          <p>Monojog Shield is our developing vision for bringing everyday focus support into one cohesive, human-first experience.</p>
+        </div>
+
+        <div class="system-grid">
+          <article class="system-card system-card-feature reveal-up">
+            <div class="card-topline"><span>01 / HARDWARE</span><span class="card-arrow">↗</span></div>
+            <div class="card-illustration hardware-illustration">
+              <div class="mini-device">
+                <div class="mini-device-ring"><span>✳</span></div>
+                <span class="mini-light"></span>
+              </div>
+              <div class="illustration-label">A considered companion</div>
+            </div>
+            <h3>Monojog Shield</h3>
+            <p>A hardware concept for gentle, user-led focus cues. We’re exploring how a small, calm companion could fit naturally into the moments that matter.</p>
+            <span class="status-pill"><i></i> In development</span>
+          </article>
+
+          <article class="system-card reveal-up delay-1">
+            <div class="card-topline"><span>02 / SOFTWARE</span><span class="card-arrow">↗</span></div>
+            <div class="card-illustration app-illustration">
+              <div class="app-window">
+                <div class="window-bar"><i></i><i></i><i></i><span>MONOJOG APP</span></div>
+                <div class="window-content">
+                  <div class="window-greeting">A moment for you<span>Small check-ins. Your call.</span></div>
+                  <div class="window-progress"></div>
+                  <div class="window-options"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+            </div>
+            <h3>A companion app</h3>
+            <p>A quiet place to set intentions, reflect on patterns, and shape routines that work for you—without turning your attention into a competition.</p>
+            <span class="status-pill"><i></i> Product vision</span>
+          </article>
+
+          <article class="system-card reveal-up delay-2">
+            <div class="card-topline"><span>03 / RESEARCH</span><span class="card-arrow">↗</span></div>
+            <div class="card-illustration research-illustration">
+              <div class="research-orbit">
+                <span class="research-center">m.</span>
+                <i class="node node-one"></i>
+                <i class="node node-two"></i>
+                <i class="node node-three"></i>
+                <i class="node node-four"></i>
+              </div>
+              <div class="research-label">Open by default</div>
+            </div>
+            <h3>Monojog Shield research</h3>
+            <p>An open research project exploring attention, interaction, and responsible design—with questions, methods, and learnings shared transparently.</p>
+            <a class="card-link" href="#research">Explore our principles <span>→</span></a>
+          </article>
+        </div>
+
+        <p class="system-footnote">These are product concepts and areas of exploration, not claims about a finished or clinically validated device.</p>
+      </div>
+    </section>
+
+    <section class="principles-section section-space" id="principles">
+      <div class="container principles-layout">
+        <div class="principles-intro reveal-up">
+          <span class="section-index">03 — WHAT WE BELIEVE</span>
+          <h2>Technology should<br><span class="serif-accent">know its place.</span></h2>
+          <p>Our north star is not more monitoring. It’s better support, shaped with the people it’s meant to serve.</p>
+        </div>
+
+        <div class="principles-list">
+          <article class="principle reveal-up">
+            <span class="principle-number">01</span>
+            <div>
+              <h3>People stay in control</h3>
+              <p>Prompts should be understandable, optional, and easy to dismiss. A tool should support your choices, never make them for you.</p>
+            </div>
+            <span class="principle-symbol">↗</span>
+          </article>
+
+          <article class="principle reveal-up delay-1">
+            <span class="principle-number">02</span>
+            <div>
+              <h3>Privacy is part of care</h3>
+              <p>We aim to minimize what is collected, explain what data is used, and make privacy decisions visible—not hidden in fine print.</p>
+            </div>
+            <span class="principle-symbol">↗</span>
+          </article>
+
+          <article class="principle reveal-up delay-2">
+            <span class="principle-number">03</span>
+            <div>
+              <h3>Evidence before claims</h3>
+              <p>Attention is complex. We won’t present a signal as a diagnosis, or suggest a prototype can prevent accidents or replace professional advice.</p>
+            </div>
+            <span class="principle-symbol">↗</span>
+          </article>
+
+          <article class="principle reveal-up delay-3">
+            <span class="principle-number">04</span>
+            <div>
+              <h3>Research should be shared</h3>
+              <p>We want to make our questions, design choices, and learnings open to discussion—so this work can improve through collaboration.</p>
+            </div>
+            <span class="principle-symbol">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section section-space" id="research">
+      <div class="research-glow" aria-hidden="true"></div>
+      <div class="container research-layout">
+        <div class="research-copy reveal-up">
+          <span class="section-index">04 — MONOJOG SHIELD / OPEN RESEARCH</span>
+          <h2>Let’s explore<br>attention <span class="serif-accent">together.</span></h2>
+          <p>Monojog Shield is an open research project, not a finished medical or safety product. We’re beginning with careful questions: how can technology support attention without adding pressure, invading privacy, or overstating what it knows?</p>
+          <p>We’ll share the direction as it develops and welcome thoughtful feedback from researchers, designers, and people with lived experience.</p>
+          <a class="btn btn-light btn-lg" href="https://github.com/edulancehub/monojog-web" target="_blank" rel="noopener noreferrer">Follow the open project <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="research-card reveal-up delay-1">
+          <div class="research-card-header"><span>OUR RESEARCH COMPASS</span><span class="compass-star">✳</span></div>
+          <div class="compass-graphic">
+            <div class="compass-circle compass-circle-outer"></div>
+            <div class="compass-circle compass-circle-inner"></div>
+            <div class="compass-cross horizontal"></div>
+            <div class="compass-cross vertical"></div>
+            <div class="compass-core">M</div>
+            <span class="compass-label north">HUMAN</span>
+            <span class="compass-label east">OPEN</span>
+            <span class="compass-label south">CAREFUL</span>
+            <span class="compass-label west">USEFUL</span>
+          </div>
+          <div class="research-card-footer"><span>Direction before certainty.</span><span>EST. IN THE OPEN</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section section-space">
+      <div class="container closing-inner reveal-up">
+        <span class="section-index">THE NEXT CHAPTER</span>
+        <h2>Make room for<br><span class="serif-accent">what matters.</span></h2>
+        <p>We’re building toward a more thoughtful relationship with attention. Start with the principles, follow the research, and help shape what comes next.</p>
+        <div class="closing-actions">
+          <a class="btn btn-primary btn-lg" href="#system">Explore Monojog Shield <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#home">Back to the beginning ↑</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="nav-logo footer-logo" href="#home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="logo-text">monojog<span class="brand-period">.</span></span>
+      </a>
+      <p>Thoughtful tools for human attention.</p>
+      <a class="footer-top" href="#home">BACK TO TOP ↑</a>
     </div>
 
-    <!-- Cursor Glow -->
-    <div class="cursor-glow" id="cursorGlow"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#" class="nav-logo">
-                <svg class="logo-icon" width="36" height="36" viewBox="0 0 48 48" fill="none">
-                    <circle cx="24" cy="24" r="22" stroke="url(#logoGrad)" stroke-width="2.5" fill="none" />
-                    <path d="M16 24C16 19.5817 19.5817 16 24 16C28.4183 16 32 19.5817 32 24C32 28.4183 28.4183 32 24 32"
-                        stroke="url(#logoGrad)" stroke-width="2.5" stroke-linecap="round" />
-                    <circle cx="24" cy="24" r="4" fill="url(#logoGrad)" />
-                    <defs>
-                        <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48">
-                            <stop stop-color="#6C3CE1" />
-                            <stop offset="1" stop-color="#00D4AA" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <span class="logo-text">Monojog</span>
-            </a>
-
-            <div class="nav-links" id="navLinks">
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#extension" class="nav-link">Extension</a>
-                <a href="#app" class="nav-link">Mobile App</a>
-                <a href="#how-it-works" class="nav-link">How It Works</a>
-                <a href="#testimonials" class="nav-link">Reviews</a>
-            </div>
-
-            <div class="nav-actions">
-                <a href="#app" class="btn btn-primary btn-sm">Get Early Access</a>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-content">
-            <a href="#features" class="mobile-link">Features</a>
-            <a href="#extension" class="mobile-link">Extension</a>
-            <a href="#app" class="mobile-link">Mobile App</a>
-            <a href="#how-it-works" class="mobile-link">How It Works</a>
-            <a href="#testimonials" class="mobile-link">Reviews</a>
-            <a href="#app" class="btn btn-primary btn-lg mobile-cta">Get Early Access</a>
-        </div>
+    <div class="container footer-bottom">
+      <span>© <span id="currentYear">2026</span> Monojog. A work in progress, built with care.</span>
+      <span>Focus support is not medical advice or an emergency safety system.</span>
     </div>
+  </footer>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <div class="hero-gradient-orb hero-orb-1"></div>
-            <div class="hero-gradient-orb hero-orb-2"></div>
-            <div class="hero-gradient-orb hero-orb-3"></div>
-            <div class="hero-grid"></div>
-        </div>
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="hero-badge reveal-up">
-                    <span class="badge-dot"></span>
-                    <span>Now available on Chrome Web Store</span>
-                </div>
-                <h1 class="hero-title reveal-up delay-1">
-                    Your Mind.<br>
-                    <span class="gradient-text">One Focus.</span><br>
-                    Zero Distractions.
-                </h1>
-                <p class="hero-description reveal-up delay-2">
-                    Monojog is the intelligent focus companion that blocks distractions, tracks your productivity, and
-                    helps you achieve deep work — across browser and mobile.
-                </p>
-                <div class="hero-cta reveal-up delay-3">
-                    <a href="#extension" class="btn btn-primary btn-lg">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <circle cx="12" cy="12" r="4" />
-                            <line x1="21.17" y1="8" x2="12" y2="8" />
-                            <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
-                            <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
-                        </svg>
-                        Install Chrome Extension
-                    </a>
-                    <a href="#app" class="btn btn-ghost btn-lg">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-                            <line x1="12" y1="18" x2="12.01" y2="18" />
-                        </svg>
-                        Get Mobile App
-                    </a>
-                </div>
-                <div class="hero-stats reveal-up delay-4">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="12000">0</span><span class="stat-suffix">+</span>
-                        <span class="stat-label">Active Users</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="4.8">0</span><span class="stat-suffix">★</span>
-                        <span class="stat-label">Chrome Rating</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="2">0</span><span class="stat-suffix">M+</span>
-                        <span class="stat-label">Hours Focused</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual reveal-up delay-2">
-                <div class="hero-mockup">
-                    <div class="mockup-browser">
-                        <div class="browser-bar">
-                            <div class="browser-dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="browser-url">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                </svg>
-                                <span>monojog.com</span>
-                            </div>
-                        </div>
-                        <div class="browser-content">
-                            <div class="mockup-dashboard">
-                                <div class="dash-header">
-                                    <div class="dash-greeting">
-                                        <div class="dash-avatar"></div>
-                                        <div>
-                                            <div class="dash-name">Good Morning!</div>
-                                            <div class="dash-sub">Ready to focus?</div>
-                                        </div>
-                                    </div>
-                                    <div class="dash-timer">
-                                        <div class="timer-ring">
-                                            <svg viewBox="0 0 100 100">
-                                                <circle cx="50" cy="50" r="45" stroke="rgba(108,60,225,0.15)"
-                                                    stroke-width="6" fill="none" />
-                                                <circle cx="50" cy="50" r="45" stroke="url(#timerGrad)" stroke-width="6"
-                                                    fill="none" stroke-dasharray="283" stroke-dashoffset="70"
-                                                    stroke-linecap="round" transform="rotate(-90 50 50)" />
-                                                <defs>
-                                                    <linearGradient id="timerGrad">
-                                                        <stop stop-color="#6C3CE1" />
-                                                        <stop offset="1" stop-color="#00D4AA" />
-                                                    </linearGradient>
-                                                </defs>
-                                            </svg>
-                                            <div class="timer-text">25:00</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dash-stats-row">
-                                    <div class="dash-stat-card">
-                                        <div class="dash-stat-icon"
-                                            style="background: rgba(108,60,225,0.1); color: #6C3CE1;">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                                            </svg>
-                                        </div>
-                                        <div class="dash-stat-info">
-                                            <div class="dash-stat-val">4.2h</div>
-                                            <div class="dash-stat-lbl">Focus Today</div>
-                                        </div>
-                                    </div>
-                                    <div class="dash-stat-card">
-                                        <div class="dash-stat-icon"
-                                            style="background: rgba(0,212,170,0.1); color: #00D4AA;">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                                            </svg>
-                                        </div>
-                                        <div class="dash-stat-info">
-                                            <div class="dash-stat-val">87%</div>
-                                            <div class="dash-stat-lbl">Productivity</div>
-                                        </div>
-                                    </div>
-                                    <div class="dash-stat-card">
-                                        <div class="dash-stat-icon"
-                                            style="background: rgba(255,107,107,0.1); color: #FF6B6B;">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <circle cx="12" cy="12" r="10" />
-                                                <polyline points="12 6 12 12 16 14" />
-                                            </svg>
-                                        </div>
-                                        <div class="dash-stat-info">
-                                            <div class="dash-stat-val">12</div>
-                                            <div class="dash-stat-lbl">Sessions</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dash-chart">
-                                    <div class="chart-bars">
-                                        <div class="chart-bar" style="--h: 65%"><span>M</span></div>
-                                        <div class="chart-bar" style="--h: 85%"><span>T</span></div>
-                                        <div class="chart-bar active" style="--h: 75%"><span>W</span></div>
-                                        <div class="chart-bar" style="--h: 90%"><span>T</span></div>
-                                        <div class="chart-bar" style="--h: 60%"><span>F</span></div>
-                                        <div class="chart-bar" style="--h: 40%"><span>S</span></div>
-                                        <div class="chart-bar" style="--h: 30%"><span>S</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Floating Elements -->
-                    <div class="float-card float-card-1">
-                        <div class="float-icon" style="background: rgba(0,212,170,0.15); color: #00D4AA;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="float-title">Distraction Blocked</div>
-                            <div class="float-sub">twitter.com — 3 times today</div>
-                        </div>
-                    </div>
-                    <div class="float-card float-card-2">
-                        <div class="float-icon" style="background: rgba(108,60,225,0.15); color: #6C3CE1;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M12 20V10M18 20V4M6 20v-4" />
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="float-title">Focus Streak</div>
-                            <div class="float-sub">7 days in a row 🔥</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-scroll-indicator">
-            <div class="scroll-line"></div>
-            <span>Scroll to explore</span>
-        </div>
-    </section>
-
-    <!-- Brands/Trust -->
-    <section class="trust-section">
-        <div class="container">
-            <p class="trust-label reveal-up">Trusted by teams at</p>
-            <div class="trust-logos reveal-up delay-1">
-                <div class="trust-logo">
-                    <svg width="120" height="30" viewBox="0 0 120 30"><text x="10" y="22" font-family="Inter"
-                            font-weight="600" font-size="16" fill="currentColor" opacity="0.5">Startup Inc</text></svg>
-                </div>
-                <div class="trust-logo">
-                    <svg width="120" height="30" viewBox="0 0 120 30"><text x="10" y="22" font-family="Inter"
-                            font-weight="600" font-size="16" fill="currentColor" opacity="0.5">DevStudio</text></svg>
-                </div>
-                <div class="trust-logo">
-                    <svg width="120" height="30" viewBox="0 0 120 30"><text x="10" y="22" font-family="Inter"
-                            font-weight="600" font-size="16" fill="currentColor" opacity="0.5">FlowTeam</text></svg>
-                </div>
-                <div class="trust-logo">
-                    <svg width="120" height="30" viewBox="0 0 120 30"><text x="10" y="22" font-family="Inter"
-                            font-weight="600" font-size="16" fill="currentColor" opacity="0.5">FocusCorp</text></svg>
-                </div>
-                <div class="trust-logo">
-                    <svg width="120" height="30" viewBox="0 0 120 30"><text x="10" y="22" font-family="Inter"
-                            font-weight="600" font-size="16" fill="currentColor" opacity="0.5">DeepWork</text></svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section" id="features">
-        <div class="container">
-            <div class="section-header reveal-up">
-                <span class="section-tag">Features</span>
-                <h2 class="section-title">Everything you need to<br><span class="gradient-text">stay in the zone</span>
-                </h2>
-                <p class="section-desc">Monojog combines intelligent distraction blocking, focus tracking, and
-                    productivity analytics into one seamless experience.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card feature-card-lg reveal-up">
-                    <div class="feature-icon-wrap">
-                        <div class="feature-icon" style="--accent: #6C3CE1;">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="feature-title">Smart Distraction Shield</h3>
-                    <p class="feature-desc">AI-powered blocking that learns your patterns. Automatically shields you
-                        from time-wasting sites during focus sessions while keeping essential tools accessible.</p>
-                    <div class="feature-visual">
-                        <div class="shield-demo">
-                            <div class="shield-item blocked">
-                                <span class="shield-status">Blocked</span>
-                                <span>twitter.com</span>
-                            </div>
-                            <div class="shield-item blocked">
-                                <span class="shield-status">Blocked</span>
-                                <span>youtube.com</span>
-                            </div>
-                            <div class="shield-item allowed">
-                                <span class="shield-status">Allowed</span>
-                                <span>github.com</span>
-                            </div>
-                            <div class="shield-item allowed">
-                                <span class="shield-status">Allowed</span>
-                                <span>docs.google.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-card reveal-up delay-1">
-                    <div class="feature-icon-wrap">
-                        <div class="feature-icon" style="--accent: #00D4AA;">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <polyline points="12 6 12 12 16 14" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="feature-title">Pomodoro & Focus Timer</h3>
-                    <p class="feature-desc">Customizable focus sessions with smart breaks. Track deep work hours and
-                        maintain optimal flow states throughout your day.</p>
-                </div>
-
-                <div class="feature-card reveal-up delay-2">
-                    <div class="feature-icon-wrap">
-                        <div class="feature-icon" style="--accent: #FF6B6B;">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M12 20V10M18 20V4M6 20v-4" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="feature-title">Deep Analytics</h3>
-                    <p class="feature-desc">Comprehensive dashboards showing focus trends, distraction patterns, and
-                        productivity scores. Understand your habits with data.</p>
-                </div>
-
-                <div class="feature-card reveal-up delay-1">
-                    <div class="feature-icon-wrap">
-                        <div class="feature-icon" style="--accent: #FFB347;">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="feature-title">Focus Mode</h3>
-                    <p class="feature-desc">One-click activation to enter deep work mode. Blocks all notifications,
-                        grays out distractions, and creates the perfect environment.</p>
-                </div>
-
-                <div class="feature-card reveal-up delay-2">
-                    <div class="feature-icon-wrap">
-                        <div class="feature-icon" style="--accent: #4ECDC4;">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="feature-title">Team Accountability</h3>
-                    <p class="feature-desc">Create focus groups with friends or colleagues. Shared goals, leaderboards,
-                        and gentle nudges to keep everyone on track.</p>
-                </div>
-
-                <div class="feature-card reveal-up delay-3">
-                    <div class="feature-icon-wrap">
-                        <div class="feature-icon" style="--accent: #A78BFA;">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                                <line x1="8" y1="21" x2="16" y2="21" />
-                                <line x1="12" y1="17" x2="12" y2="21" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="feature-title">Cross-Platform Sync</h3>
-                    <p class="feature-desc">Seamless sync between Chrome extension and mobile app. Your focus data,
-                        block lists, and settings travel with you everywhere.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Chrome Extension Section -->
-    <section class="extension-section" id="extension">
-        <div class="container">
-            <div class="extension-layout">
-                <div class="extension-content reveal-up">
-                    <span class="section-tag">Chrome Extension</span>
-                    <h2 class="section-title">Take control of your<br><span class="gradient-text">browser
-                            experience</span></h2>
-                    <p class="section-desc">The Monojog Chrome Extension sits quietly in your toolbar, ready to activate
-                        when you need to lock in. Block distracting sites, track focus time, and see your productivity
-                        stats — all without leaving your browser.</p>
-
-                    <div class="extension-features">
-                        <div class="ext-feature">
-                            <div class="ext-check">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
-                            <span>One-click focus mode activation</span>
-                        </div>
-                        <div class="ext-feature">
-                            <div class="ext-check">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
-                            <span>Customizable site blocklist</span>
-                        </div>
-                        <div class="ext-feature">
-                            <div class="ext-check">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
-                            <span>Real-time productivity dashboard</span>
-                        </div>
-                        <div class="ext-feature">
-                            <div class="ext-check">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
-                            <span>Daily & weekly focus reports</span>
-                        </div>
-                        <div class="ext-feature">
-                            <div class="ext-check">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </div>
-                            <span>Ambient sounds for deep work</span>
-                        </div>
-                    </div>
-
-                    <a href="https://chrome.google.com/webstore" target="_blank" class="btn btn-primary btn-lg">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <circle cx="12" cy="12" r="4" />
-                            <line x1="21.17" y1="8" x2="12" y2="8" />
-                            <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
-                            <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
-                        </svg>
-                        Add to Chrome — It's Free
-                    </a>
-                    <p class="ext-note">Free forever. No account required to start.</p>
-                </div>
-
-                <div class="extension-visual reveal-up delay-1">
-                    <div class="ext-popup-mockup">
-                        <div class="ext-popup">
-                            <div class="ext-popup-header">
-                                <div class="ext-popup-logo">
-                                    <svg width="24" height="24" viewBox="0 0 48 48" fill="none">
-                                        <circle cx="24" cy="24" r="22" stroke="url(#extGrad)" stroke-width="2.5"
-                                            fill="none" />
-                                        <circle cx="24" cy="24" r="4" fill="url(#extGrad)" />
-                                        <defs>
-                                            <linearGradient id="extGrad" x1="0" y1="0" x2="48" y2="48">
-                                                <stop stop-color="#6C3CE1" />
-                                                <stop offset="1" stop-color="#00D4AA" />
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                    <span>Monojog</span>
-                                </div>
-                                <div class="ext-popup-toggle">
-                                    <div class="toggle-switch active">
-                                        <div class="toggle-knob"></div>
-                                    </div>
-                                    <span>Focus ON</span>
-                                </div>
-                            </div>
-                            <div class="ext-popup-timer">
-                                <div class="ext-timer-circle">
-                                    <svg viewBox="0 0 120 120">
-                                        <circle cx="60" cy="60" r="52" stroke="rgba(108,60,225,0.1)" stroke-width="8"
-                                            fill="none" />
-                                        <circle cx="60" cy="60" r="52" stroke="url(#extTimerGrad)" stroke-width="8"
-                                            fill="none" stroke-dasharray="327" stroke-dashoffset="80"
-                                            stroke-linecap="round" transform="rotate(-90 60 60)" />
-                                        <defs>
-                                            <linearGradient id="extTimerGrad">
-                                                <stop stop-color="#6C3CE1" />
-                                                <stop offset="1" stop-color="#00D4AA" />
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                    <div class="ext-timer-inner">
-                                        <div class="ext-timer-time">18:42</div>
-                                        <div class="ext-timer-label">Remaining</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ext-popup-stats">
-                                <div class="ext-mini-stat">
-                                    <span class="ext-mini-val">3.5h</span>
-                                    <span class="ext-mini-lbl">Today</span>
-                                </div>
-                                <div class="ext-mini-stat">
-                                    <span class="ext-mini-val">23</span>
-                                    <span class="ext-mini-lbl">Blocked</span>
-                                </div>
-                                <div class="ext-mini-stat">
-                                    <span class="ext-mini-val">92%</span>
-                                    <span class="ext-mini-lbl">Score</span>
-                                </div>
-                            </div>
-                            <div class="ext-popup-sites">
-                                <div class="ext-site-item">
-                                    <div class="ext-site-blocked"></div>
-                                    <span>twitter.com</span>
-                                    <span class="ext-site-count">×7</span>
-                                </div>
-                                <div class="ext-site-item">
-                                    <div class="ext-site-blocked"></div>
-                                    <span>reddit.com</span>
-                                    <span class="ext-site-count">×4</span>
-                                </div>
-                                <div class="ext-site-item">
-                                    <div class="ext-site-blocked"></div>
-                                    <span>instagram.com</span>
-                                    <span class="ext-site-count">×2</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-section" id="how-it-works">
-        <div class="container">
-            <div class="section-header reveal-up">
-                <span class="section-tag">How It Works</span>
-                <h2 class="section-title">Start focusing in<br><span class="gradient-text">three simple steps</span>
-                </h2>
-            </div>
-
-            <div class="steps-grid">
-                <div class="step-card reveal-up">
-                    <div class="step-number">01</div>
-                    <div class="step-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                        </svg>
-                    </div>
-                    <h3 class="step-title">Install & Setup</h3>
-                    <p class="step-desc">Add the Chrome extension or download the mobile app. Create your profile and
-                        customize your blocklist in under 2 minutes.</p>
-                </div>
-                <div class="step-connector reveal-up delay-1">
-                    <svg width="100" height="2">
-                        <line x1="0" y1="1" x2="100" y2="1" stroke="url(#connGrad)" stroke-width="2"
-                            stroke-dasharray="6 4" />
-                        <defs>
-                            <linearGradient id="connGrad">
-                                <stop stop-color="#6C3CE1" />
-                                <stop offset="1" stop-color="#00D4AA" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="step-card reveal-up delay-1">
-                    <div class="step-number">02</div>
-                    <div class="step-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                        </svg>
-                    </div>
-                    <h3 class="step-title">Activate Focus</h3>
-                    <p class="step-desc">Hit the focus button to start a session. Monojog activates your shield, blocks
-                        distractions, and starts tracking your deep work.</p>
-                </div>
-                <div class="step-connector reveal-up delay-2">
-                    <svg width="100" height="2">
-                        <line x1="0" y1="1" x2="100" y2="1" stroke="url(#connGrad2)" stroke-width="2"
-                            stroke-dasharray="6 4" />
-                        <defs>
-                            <linearGradient id="connGrad2">
-                                <stop stop-color="#6C3CE1" />
-                                <stop offset="1" stop-color="#00D4AA" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="step-card reveal-up delay-2">
-                    <div class="step-number">03</div>
-                    <div class="step-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <path d="M12 20V10M18 20V4M6 20v-4" />
-                        </svg>
-                    </div>
-                    <h3 class="step-title">Review & Grow</h3>
-                    <p class="step-desc">Check your daily reports, see focus trends, and beat your personal records.
-                        Watch your productivity transform over time.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mobile App Section -->
-    <section class="app-section" id="app">
-        <div class="app-bg">
-            <div class="app-gradient-orb app-orb-1"></div>
-            <div class="app-gradient-orb app-orb-2"></div>
-        </div>
-        <div class="container">
-            <div class="app-layout">
-                <div class="app-visual reveal-up">
-                    <div class="phone-mockup">
-                        <div class="phone-frame">
-                            <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <div class="phone-status-bar">
-                                    <span>9:41</span>
-                                    <div class="phone-status-icons">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                            <path
-                                                d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 0 0-6 0zm-4-4l2 2a7.074 7.074 0 0 1 10 0l2-2C15.14 9.14 8.87 9.14 5 13z" />
-                                        </svg>
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                            <rect x="17" y="4" width="5" height="16" rx="1" />
-                                            <rect x="11" y="8" width="5" height="12" rx="1" />
-                                            <rect x="5" y="12" width="5" height="8" rx="1" />
-                                        </svg>
-                                        <svg width="18" height="14" viewBox="0 0 28 14" fill="currentColor">
-                                            <rect x="0" y="1" width="24" height="12" rx="3" stroke="currentColor"
-                                                stroke-width="1" fill="none" />
-                                            <rect x="25" y="4.5" width="3" height="5" rx="1" />
-                                            <rect x="2" y="3" width="16" height="8" rx="1.5" fill="#00D4AA" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="phone-app-content">
-                                    <div class="phone-greeting">
-                                        <div class="phone-user-row">
-                                            <div>
-                                                <div class="phone-hello">Hello, Alex 👋</div>
-                                                <div class="phone-subtitle">Let's crush your goals today</div>
-                                            </div>
-                                            <div class="phone-avatar-sm"></div>
-                                        </div>
-                                    </div>
-                                    <div class="phone-focus-card">
-                                        <div class="phone-focus-header">
-                                            <span>Today's Focus</span>
-                                            <span class="phone-focus-streak">🔥 7 days</span>
-                                        </div>
-                                        <div class="phone-timer-large">
-                                            <svg viewBox="0 0 140 140" width="140" height="140">
-                                                <circle cx="70" cy="70" r="60" stroke="rgba(255,255,255,0.08)"
-                                                    stroke-width="10" fill="none" />
-                                                <circle cx="70" cy="70" r="60" stroke="url(#phoneTimerGrad)"
-                                                    stroke-width="10" fill="none" stroke-dasharray="377"
-                                                    stroke-dashoffset="95" stroke-linecap="round"
-                                                    transform="rotate(-90 70 70)" />
-                                                <defs>
-                                                    <linearGradient id="phoneTimerGrad">
-                                                        <stop stop-color="#6C3CE1" />
-                                                        <stop offset="1" stop-color="#00D4AA" />
-                                                    </linearGradient>
-                                                </defs>
-                                            </svg>
-                                            <div class="phone-timer-text">
-                                                <div class="phone-time">3h 24m</div>
-                                                <div class="phone-time-label">of 5h goal</div>
-                                            </div>
-                                        </div>
-                                        <button class="phone-start-btn">Start Focus Session</button>
-                                    </div>
-                                    <div class="phone-quick-stats">
-                                        <div class="phone-qstat">
-                                            <div class="phone-qstat-val">12</div>
-                                            <div class="phone-qstat-lbl">Sessions</div>
-                                        </div>
-                                        <div class="phone-qstat">
-                                            <div class="phone-qstat-val">87%</div>
-                                            <div class="phone-qstat-lbl">Score</div>
-                                        </div>
-                                        <div class="phone-qstat">
-                                            <div class="phone-qstat-val">45</div>
-                                            <div class="phone-qstat-lbl">Blocked</div>
-                                        </div>
-                                    </div>
-                                    <div class="phone-nav-bar">
-                                        <div class="phone-nav-item active">
-                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                            </svg>
-                                            <span>Home</span>
-                                        </div>
-                                        <div class="phone-nav-item">
-                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <path d="M12 20V10M18 20V4M6 20v-4" />
-                                            </svg>
-                                            <span>Stats</span>
-                                        </div>
-                                        <div class="phone-nav-item">
-                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <circle cx="12" cy="12" r="10" />
-                                                <polyline points="12 6 12 12 16 14" />
-                                            </svg>
-                                            <span>Timer</span>
-                                        </div>
-                                        <div class="phone-nav-item">
-                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2">
-                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                                <circle cx="12" cy="7" r="4" />
-                                            </svg>
-                                            <span>Profile</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="app-content reveal-up delay-1">
-                    <div class="coming-soon-badge">
-                        <span class="cs-dot"></span>
-                        <span>Coming Soon to Google Play</span>
-                    </div>
-                    <h2 class="section-title">Focus goes<br><span class="gradient-text">wherever you go</span></h2>
-                    <p class="section-desc">Take Monojog beyond your browser. The mobile app brings powerful focus tools
-                        to your phone — block app distractions, lock-in with timers, and track it all from your pocket.
-                    </p>
-
-                    <div class="app-features-list">
-                        <div class="app-feat">
-                            <div class="app-feat-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>App Blocker</strong>
-                                <p>Block distracting apps during focus sessions. Set schedules for automatic activation.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="app-feat">
-                            <div class="app-feat-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>Smart Notifications</strong>
-                                <p>Intelligent DND that lets important calls through while silencing the rest.</p>
-                            </div>
-                        </div>
-                        <div class="app-feat">
-                            <div class="app-feat-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                                    <line x1="8" y1="21" x2="16" y2="21" />
-                                    <line x1="12" y1="17" x2="12" y2="21" />
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>Cross-Device Sync</strong>
-                                <p>All your data syncs seamlessly between Chrome extension and mobile app.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="app-notify-form">
-                        <h4>Get notified when we launch</h4>
-                        <form class="notify-form" id="notifyForm">
-                            <div class="form-group">
-                                <input type="email" placeholder="Enter your email" required id="emailInput">
-                                <button type="submit" class="btn btn-primary">
-                                    Notify Me
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <polyline points="12 5 19 12 12 19" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </form>
-                        <p class="form-note">Join 2,400+ others waiting for launch. No spam, ever.</p>
-                    </div>
-
-                    <div class="store-badges">
-                        <a href="#" class="store-badge google-play">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M3 20.5V3.5c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm.91-.91L19.59 12l-1.87-2.21-2.47 2.47 2.47 2.45zM6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z" />
-                            </svg>
-                            <div>
-                                <span class="store-label">Coming soon on</span>
-                                <span class="store-name">Google Play</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="container">
-            <div class="section-header reveal-up">
-                <span class="section-tag">Reviews</span>
-                <h2 class="section-title">Loved by <span class="gradient-text">focused people</span></h2>
-                <p class="section-desc">Don't just take our word for it. Here's what our community says about Monojog.
-                </p>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card reveal-up">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Monojog completely changed my work routine. I went from 2 hours of deep
-                        work to consistently hitting 5+ hours. The distraction blocking is incredibly smart."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #6C3CE1, #00D4AA);">SK
-                        </div>
-                        <div>
-                            <div class="author-name">Sarah K.</div>
-                            <div class="author-role">Software Developer</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card reveal-up delay-1">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"As a student, I was constantly distracted. Monojog helped me stay
-                        focused during study sessions. My grades improved significantly within one semester."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #FF6B6B, #FFB347);">MR
-                        </div>
-                        <div>
-                            <div class="author-name">Michael R.</div>
-                            <div class="author-role">University Student</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card reveal-up delay-2">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"I've tried every productivity tool out there. Monojog is the only one
-                        that actually sticks. The UI is beautiful and the analytics keep me motivated every day."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #4ECDC4, #44B09E);">AP
-                        </div>
-                        <div>
-                            <div class="author-name">Aisha P.</div>
-                            <div class="author-role">Product Manager</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card reveal-up delay-1">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Our entire team uses Monojog. The team accountability feature is a
-                        game-changer. We've seen a 40% increase in team productivity since adopting it."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #A78BFA, #6C3CE1);">DL
-                        </div>
-                        <div>
-                            <div class="author-name">David L.</div>
-                            <div class="author-role">Startup Founder</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card reveal-up delay-2">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"The Pomodoro timer with smart breaks is perfect. I love how Monojog
-                        learns my patterns and suggests optimal focus and break durations."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #00D4AA, #6C3CE1);">JT
-                        </div>
-                        <div>
-                            <div class="author-name">Jenny T.</div>
-                            <div class="author-role">Freelance Designer</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card reveal-up delay-3">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Can't wait for the mobile app! The Chrome extension already boosted my
-                        productivity so much. Monojog is hands-down the best focus tool I've ever used."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #FFB347, #FF6B6B);">RN
-                        </div>
-                        <div>
-                            <div class="author-name">Raj N.</div>
-                            <div class="author-role">Content Creator</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-bg">
-            <div class="cta-gradient-orb cta-orb-1"></div>
-            <div class="cta-gradient-orb cta-orb-2"></div>
-        </div>
-        <div class="container">
-            <div class="cta-content reveal-up">
-                <h2 class="cta-title">Ready to take control<br>of your focus?</h2>
-                <p class="cta-desc">Join thousands of productive people who use Monojog to eliminate distractions and
-                    achieve deep work every day.</p>
-                <div class="cta-buttons">
-                    <a href="https://chrome.google.com/webstore" target="_blank" class="btn btn-white btn-lg">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <circle cx="12" cy="12" r="4" />
-                        </svg>
-                        Install Chrome Extension
-                    </a>
-                    <a href="#app" class="btn btn-ghost-white btn-lg">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-                            <line x1="12" y1="18" x2="12.01" y2="18" />
-                        </svg>
-                        Get Mobile App
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="nav-logo">
-                        <svg class="logo-icon" width="32" height="32" viewBox="0 0 48 48" fill="none">
-                            <circle cx="24" cy="24" r="22" stroke="url(#footerGrad)" stroke-width="2.5" fill="none" />
-                            <path
-                                d="M16 24C16 19.5817 19.5817 16 24 16C28.4183 16 32 19.5817 32 24C32 28.4183 28.4183 32 24 32"
-                                stroke="url(#footerGrad)" stroke-width="2.5" stroke-linecap="round" />
-                            <circle cx="24" cy="24" r="4" fill="url(#footerGrad)" />
-                            <defs>
-                                <linearGradient id="footerGrad" x1="0" y1="0" x2="48" y2="48">
-                                    <stop stop-color="#6C3CE1" />
-                                    <stop offset="1" stop-color="#00D4AA" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        <span class="logo-text">Monojog</span>
-                    </a>
-                    <p class="footer-desc">Your intelligent focus companion. Block distractions, track productivity, and
-                        achieve deep work — every day.</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="GitHub">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Product</h4>
-                    <a href="#features">Features</a>
-                    <a href="#extension">Chrome Extension</a>
-                    <a href="#app">Mobile App</a>
-                    <a href="#">Pricing</a>
-                    <a href="#">Changelog</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="#">About Us</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Press Kit</a>
-                    <a href="#">Contact</a>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Support</h4>
-                    <a href="#">Help Center</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Status</a>
-                    <a href="#">API Docs</a>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Monojog. All rights reserved.</p>
-                <p>Made with focus, for the focused.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
+  <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
 </body>
-
 </html>
